@@ -1,0 +1,1 @@
+rm File_Reader/*.class
