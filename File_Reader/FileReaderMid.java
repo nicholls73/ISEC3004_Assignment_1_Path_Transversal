@@ -2,14 +2,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class PathTransversalMid {
+public class FileReaderMid {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("\nDISPLAY CONTENTS OF FILE IN CURRENT DIRECTORY\n\n\u001B[34mFILE NAME:\u001B[0m\n    ");
             String fileName = sc.next();
             File file = new File(fileName).getCanonicalFile();
 
-            if (!file.getAbsolutePath().contains("Program_Files")) {
+            if (!file.getAbsolutePath().contains("File_Reader")) {
                 System.out.println("\u001B[31mINVALID FILE NAME\u001B[0m");
             }
             else {

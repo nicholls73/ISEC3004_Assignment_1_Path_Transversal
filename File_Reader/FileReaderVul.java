@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class PathTransversalVul {
+public class FileReaderVul {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("\nDISPLAY CONTENTS OF FILE IN CURRENT DIRECTORY\n\n\u001B[34mFILE NAME:\u001B[0m\n    ");
