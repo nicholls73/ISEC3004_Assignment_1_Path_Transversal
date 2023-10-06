@@ -5,16 +5,23 @@ import java.util.Scanner;
 public class FileReaderMid {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
+            // Prompt the user for the file name
             System.out.print("\nDISPLAY CONTENTS OF FILE IN CURRENT DIRECTORY\n\n\u001B[34mFILE NAME:\u001B[0m\n    ");
             String fileName = sc.next();
+
             File file = new File(fileName).getCanonicalFile();
 
+            // Get the absolute path and check if it is within the program's file
+            // (File_Reader).
             if (!file.getAbsolutePath().contains("File_Reader")) {
+                // If the file is not within the program's file, print an error message
                 System.out.println("\u001B[31mINVALID FILE NAME\u001B[0m");
-            }
-            else {
+            } else {
+                // If the file is within the program's file, create a Scanner object to read
+                // from it
                 Scanner reader = new Scanner(file);
 
+                // Print the contents of the file
                 System.out.println("\n\u001B[34mFILE CONTENTS:\u001B[0m");
                 while (reader.hasNextLine()) {
                     System.out.println("    " + reader.nextLine());
