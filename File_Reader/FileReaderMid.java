@@ -9,16 +9,11 @@ public class FileReaderMid {
             System.out.print("\nDISPLAY CONTENTS OF FILE IN CURRENT DIRECTORY\n\n\u001B[34mFILE NAME:\u001B[0m\n    ");
             String fileName = sc.next();
 
+            // Get the canonical file path.
             File file = new File(fileName).getCanonicalFile();
 
-            // Get the absolute path and check if it is within the program's file
-            // (File_Reader).
-            if (!file.getAbsolutePath().contains("File_Reader")) {
-                // If the file is not within the program's file, print an error message
-                System.out.println("\u001B[31mINVALID FILE NAME\u001B[0m");
-            } else {
-                // If the file is within the program's file, create a Scanner object to read
-                // from it
+            // Get the file's path and check if it is within the program's file (File_Reader).
+            if (file.getPath().contains("File_Reader")) { // If file is within the program's file.
                 Scanner reader = new Scanner(file);
 
                 // Print the contents of the file
@@ -28,6 +23,8 @@ public class FileReaderMid {
                 }
                 System.out.println();
                 reader.close();
+            } else { // If file is NOT within the program's file.
+                System.out.println("\u001B[31mINVALID FILE NAME\u001B[0m");
             }
         } catch (IOException e) {
             System.out.println("\n\u001B[31mERROR READING FILE: \u001B[0m" + e.getMessage());
