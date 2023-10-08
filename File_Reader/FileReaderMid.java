@@ -23,7 +23,7 @@ public class FileReaderMid {
                 }
                 System.out.println();
                 reader.close();
-            } else { // If file is NOT within the program's file.
+            } else { // If the file is NOT within the program's file.
                 System.out.println("\u001B[31mINVALID FILE NAME\u001B[0m");
             }
         } catch (IOException e) {
